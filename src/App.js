@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import styles from './App.module.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1>Weather App</h1>
+      <main className={styles.searchBar}>
+        <input type='text' placeholder='Search your location'/>
+        <button>Search</button>
+        {/* Here we will put SearchBar component */}
+      </main>
+      <section className={styles.weatherCard}>
+        <div>
+          <h2>Location: New York</h2>
+          <p>Temperature: 25°C</p>
+          <p>Condition: Sunny</p>
+        </div>
+        {/* Here we will put WeatherDisplay component */}
+      </section>
+    </>
   );
 }
 
