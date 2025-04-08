@@ -1,6 +1,7 @@
 import styles from './App.module.css';
 import React, { useState } from 'react';
 import SearchBar from './SearchBar/SearchBar';
+import WeatherDisplay from './WeatherDisplay/WeatherDisplay';
 
 
 function App() {
@@ -40,15 +41,9 @@ function App() {
         handleSearch={handleSearch}
          />
       </main>
-      {weatherData && (
-        <section className={styles.weatherCard}>
-        <div>
-          <h2>Location: {weatherData.name}</h2>
-          <p>Temperature: {weatherData.main.temp}°C</p>
-          <p>Condition: {weatherData.weather[0].description}</p>
-        </div>
-        {/* Here we will put WeatherDisplay component */}
-      </section>)}
+      {weatherData && <WeatherDisplay
+      weatherData={weatherData}
+      />}
     </>
   );
 }
